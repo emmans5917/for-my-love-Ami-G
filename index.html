@@ -74,7 +74,6 @@
             transform: translateY(-5px);
         }
 
-        /* Carta asomándose dentro */
         .letter-preview {
             position: absolute;
             bottom: 10px;
@@ -100,7 +99,6 @@
             color: #d6336c;
         }
 
-        /* Solapa superior que se abre */
         .flap {
             position: absolute;
             top: 0;
@@ -116,7 +114,6 @@
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
-        /* Bolsillo frontal del sobre */
         .pocket {
             position: absolute;
             bottom: 0;
@@ -131,7 +128,6 @@
             z-index: 3;
         }
 
-        /* Sello de corazón */
         .wax-seal {
             position: absolute;
             top: 95px;
@@ -167,7 +163,6 @@
             box-shadow: 0 4px 15px rgba(214, 51, 108, 0.15);
         }
 
-        /* Estado abierto del sobre */
         .envelope.open .flap {
             transform: rotateX(180deg);
             z-index: 1;
@@ -189,7 +184,7 @@
             display: none;
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(10px);
-            max-width: 600px;
+            max-width: 620px;
             width: 100%;
             border-radius: 25px;
             padding: 35px 25px;
@@ -240,9 +235,9 @@
             background: #ffe3e8;
             color: #d6336c;
             border: none;
-            padding: 10px 16px;
+            padding: 9px 14px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -317,6 +312,50 @@
             transform: translateY(-2px);
         }
 
+        /* =========================================
+           NUEVA SECCIÓN: NUESTRA HISTORIA
+           ========================================= */
+        .story-container {
+            max-height: 360px;
+            overflow-y: auto;
+            padding-right: 6px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .story-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .story-container::-webkit-scrollbar-thumb {
+            background: #ffb3c1;
+            border-radius: 10px;
+        }
+
+        .story-chapter {
+            background: #fff0f3;
+            border-radius: 15px;
+            padding: 16px 18px;
+            border-left: 4px solid #ff4d6d;
+            position: relative;
+        }
+
+        .story-chapter h3 {
+            font-size: 0.95rem;
+            color: #d6336c;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .story-chapter p {
+            font-size: 0.9rem;
+            color: #3a3a3a;
+            line-height: 1.6;
+        }
+
         /* Lista de canciones */
         .song-list {
             display: flex;
@@ -328,7 +367,6 @@
             text-align: left;
         }
 
-        /* Personalización de barra de scroll */
         .song-list::-webkit-scrollbar {
             width: 6px;
         }
@@ -409,12 +447,13 @@
     <!-- PANTALLA 2: EL CONTENIDO DE LA CARTA -->
     <div class="card" id="main-card">
         <h1> ❤️❤️ Ami ❤️❤️</h1>
-        <p class="subtitle">Solo quería dejarte aquí unas cuantas razones de por qué te quiero tanto y cada día que pasa aumenta, realmente estoy comprometdio en hacer que nuestra relación funcione.</p>
+        <p class="subtitle">Solo quería dejarte aquí unas cuantas razones de por qué te quiero tanto y cada día que pasa aumenta, realmente estoy comprometido en hacer que nuestra relación funcione.</p>
 
         <!-- Botones de navegación -->
         <div class="tabs">
             <button class="tab-btn active" onclick="openTab('razones', this)">❤️ Razones</button>
-            <button class="tab-btn" onclick="openTab('ella-a-mi', this)">🎵 Te recuerdan a mi</button>
+            <button class="tab-btn" onclick="openTab('historia', this)">📖 Cómo empezó todo</button>
+            <button class="tab-btn" onclick="openTab('ella-a-mi', this)">🎵 Te recuerdan a mí</button>
             <button class="tab-btn" onclick="openTab('yo-a-ella', this)">🎶 Me recuerdan a ti</button>
         </div>
 
@@ -427,12 +466,37 @@
             <button class="action-btn" id="next-btn" onclick="nextReason()">Ver siguiente razón ✨</button>
         </div>
 
+        <!-- SECCIÓN NUEVA: NUESTRA HISTORIA -->
+        <div id="historia" class="section">
+            <div class="story-container">
+                <div class="story-chapter">
+                    <h3>💃 Hombre arrítmico llega a clase de los avanzados</h3>
+                    <p>Todo comienza cuando don arrítmico decide ir a la clase de lunes y miércoles. Desde la primera vez que me tocó bailar contigo me llamaste muchísimo la atención, pero lo primero que me cautivó fue el aroma tan rico, limpio y fresco de tu cabello cada vez que nos tocaba bailar juntos. La verdad es que al principio me ponía súper nervioso porque me volteabas a ver mucho a los ojos, además de que obviamente llevabas el ritmo muchísimo mejor que yo; pero aun así me entusiasmaba bastante volver a bailar contigo, esperaba con ansias que llegara nuestro turno.</p>
+                </div>
+
+                <div class="story-chapter">
+                    <h3>✨ Un miércoles, un codazo y tu sonrisa</h3>
+                    <p>El verdadero "clic" pasó un miércoles: por no hacer bien un paso me diste un codazo (que admito, exageré un poquito para hacerme notar), y al mirarte de cerca me quedé impactado con tus facciones, tus ojos, tu sonrisa y lo hermosa que eres al natural, sin necesidad de maquillaje. A la siguiente clase, de la forma más aleatoria posible, por fin me animé a preguntarte tu nombre: <strong>Amisadai</strong> (y sí, confieso que lo investigué; jamás me había encontrado a una persona con ese nombre, muy lindo por cierto).</p>
+                </div>
+
+                <div class="story-chapter">
+                    <h3>Nuevo Salón de clases</h3>
+                    <p>Después nos cambiamos de sede —de la Unidad Deportiva Fidel Velázquez al nuevo salón— y ahí confieso que sentí bonito que hayas tomado mi celular para tomarte fotos conmigo y los demás. Fue totalmente espontáneo; recuerdo cómo viste mi celular en la bolsa de mi camisa de señor (jeje) y de ahí aprovechaste el momento. Ese gesto tan espontáneo fue lindo; posteriormente al otro día me escribiste para pedirme las fotos, tomaste bastante rápido la iniciativa. Yo me iba a esperar hasta la próxima clase para pedirte tu número y enviarte las fotos, y definitivamente donde dije "esta niña tan linda sí tiene sentido del humor (entiende la fokin vibra)" fue cuando te envié la foto de mi desayuno para ver una sola vez jajaja y respondiste: <em>"No somos amantes"</em> JAJAJA. En serio eso me hizo imaginarme que nos llevaríamos muy bien, y ve hasta dónde nos ha llevado.</p>
+                </div>
+
+                <div class="story-chapter">
+                    <h3>💫 Baile Social "Idilio"</h3>
+                    <p>Qué lindo recuerdo, definitivamente lo atesoro demasiado como cada recuerdo contigo, pero este en especial tiene un valor único, porque ya hablamos un poquito más y te llevé el mango picado, y todo porque en tu estado tenías un mango jejeje, neta que fue súper lindo. Te veías hermosísima como siempre, mi amor.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- SECCIÓN 2: Canciones que me recordaste -->
         <div id="ella-a-mi" class="section">
             <div class="song-list" id="lista-ella"></div>
         </div>
 
-        <!-- SECCIÓN 3: Canciones que me recuerdan a ti. -->
+        <!-- SECCIÓN 3: Canciones que me recuerdan a ti -->
         <div id="yo-a-ella" class="section">
             <div class="song-list" id="lista-yo"></div>
         </div>
@@ -442,7 +506,7 @@
 
     <script>
         // ==========================================
-        // 1. EDITA TUS RAZONES AQUÍ
+        // 1. TUS RAZONES
         // ==========================================
         const razones = [
             "Por tus ojos, por esa manera tan tuya de mirar que me desarma, y por tu sonrisa, que tiene el poder de alegrarme el día.",
@@ -450,44 +514,43 @@
             "Por el aroma de tu cabello y esa esencia tan tuya que se me queda grabada incluso cuando ya no estás cerca.",
             "Porque eres espontánea, divertida, muy inteligente... y porque cuando bailas tienes una sensualidad que me deja idiotizado.",
             "Porque me encanta hablar contigo, ya sea por mensaje o en llamada; contigo el tiempo vuela y los días dejaron de ser monótonos.",
-			"Por la manera en la que me abrazas; en tus brazos encuentro una paz que no había sentido en ningún otro lugar.",
-			"Porque el cambio que has provocado en mí es más que significativo: eres un verdadero hito en mi vida. Me devolviste el hambre de éxito y las ganas de salir de mi zona de confort.",
-			"Porque aunque nuestro primer mes fue una montaña rusa de emociones y después llegaron los desacuerdos y distintos puntos de vista, entendí que lo que siento por ti es real y te quiero de verdad.",
+            "Por la manera en la que me abrazas; en tus brazos encuentro una paz que no había sentido en ningún otro lugar.",
+            "Porque el cambio que has provocado en mí es más que significativo: eres un verdadero hito en mi vida. Me devolviste el hambre de éxito y las ganas de salir de mi zona de confort.",
+            "Porque aunque nuestro primer mes fue una montaña rusa de emociones y después llegaron los desacuerdos y distintos puntos de vista, entendí que lo que siento por ti es real y te quiero de verdad.",
             "Porque con el corazón en la mano, haberte conocido es una bendición de Dios y lo mejor que me pasó este año. Entiendo si aún tienes miedo de iniciar una nueva relación, pero si me lo permites, me encantaría que me acompañes en este camino... porque cada día te quiero más. ❤️"
         ];
 
         // ==========================================
-        // 2. Canciones que te recuerdan a mi
+        // 2. Canciones que te recuerdan a mí
         // ==========================================
         const cancionesDeElla = [
             {
                 titulo: "Delicate",
-				artista: "Taylor Swift",
-				nota: "La canción perfecta para describir el principio; al estar aquí me doy cuenta que nuestro valía la pena cuidarlo.",
+                artista: "Taylor Swift",
+                nota: "La canción perfecta para describir el principio; al estar aquí me doy cuenta que lo nuestro valía la pena cuidarlo.",
                 link: "https://open.spotify.com/track/6NFyWDv5CjfwuzoCkw47Xf"
-				 
             },
             {
                 titulo: "King of my heart",
-				artista: "Taylor Swift",
+                artista: "Taylor Swift",
                 nota: "Mi favorita de las que me has dedicado. Saber que me ves así me hace sentir el hombre más afortunado.",
                 link: "https://open.spotify.com/track/7HuBDWi18s4aJM8UFnNheH"
             },
-			{
+            {
                 titulo: "Slut",
-				artista: "Taylor Swift",
+                artista: "Taylor Swift",
                 nota: "Me recuerda a nuestra montaña rusa del primer mes, cuando lo único que importaba era estar juntos.",
                 link: "https://open.spotify.com/track/71BqAINEnezjQfxE4VuJfq"
             }
         ];
 
         // ==========================================
-        // 3. Canciones que me recuerdan a ti.
+        // 3. Canciones que me recuerdan a ti
         // ==========================================
         const cancionesParaElla = [
             {
                 titulo: "Can't Take My Eyes Off You",
-                artista: "Frankie Valiie",
+                artista: "Frankie Valli",
                 nota: "Porque literalmente no puedo quitarte los ojos de encima; eres tan bonita al natural que todavía me parece increíble que me permitas estar contigo.",
                 link: "https://open.spotify.com/track/6ft9PAgNOjmZ2kFVP7LGqb"
             },
@@ -497,19 +560,19 @@
                 nota: "Para recordarte esa conexión tan única que tenemos desde el principio",
                 link: "https://open.spotify.com/track/3GSMdtJphymHEsR8K9jT5Q"
             },
-			{
+            {
                 titulo: "La Mujer Que Bota Fuego",
                 artista: "Manuel Medrano",
                 nota: "Te la dediqué porque describe la fascinación que tengo por tu inteligencia y tu lado sensual que me desarma por completo.",
                 link: "https://open.spotify.com/track/6w6EINTodc8j0TWtrWHdm2"
             },
-			{
+            {
                 titulo: "Quiero Morir en Tu Piel",
                 artista: "Willie González",
                 nota: "Porque en tus abrazos encuentro toda la paz del mundo y tu esencia se me queda grabada en la piel.",
                 link: "https://open.spotify.com/track/3t3jGDeU3t1ro51C3x2pPR"
             },
-			{
+            {
                 titulo: "Tuyo",
                 artista: "Mora",
                 nota: "Porque sin darme cuenta me fui volviendo tuyo; cada día que pasa te quiero más.",
@@ -517,7 +580,6 @@
             }
         ];
 
-      
         let opened = false;
 
         function openEnvelope() {
@@ -566,11 +628,9 @@
             `).join('');
         }
 
-        // Cargar listas al iniciar
         renderSongs(cancionesDeElla, 'lista-ella');
         renderSongs(cancionesParaElla, 'lista-yo');
 
-        // Cambiar de pestaña
         function openTab(tabId, btnElement) {
             document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -579,7 +639,6 @@
             btnElement.classList.add('active');
         }
 
-        // Corazones flotantes
         function createHearts() {
             const heart = document.createElement('div');
             heart.classList.add('heart-bg');
